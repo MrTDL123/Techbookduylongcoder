@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Book Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <!-- <div class="topheader">
+                <div class="contact">
+                    <p>Contact us on <a href="#">0 800 123-4567</a> Or <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                </div>
+        
+                <div class="register_cart">
+                    <div class="register">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-solid fa-pen"></i> Register / </a>
+                        <a href="#"><i class="fa-solid fa-user"></i> Login</a>
+                    </div>
+    
+                    <div class="cart">
+                        <p>your cart: 0 items - $0.00</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="topheader">
+                <div class="contact">
+                    <p>Contact us on <a href="#">0 800 123-4567</a> Or <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                </div>
+        
+                <div class="register_cart">
+                    <div class="register">
+
+                        <form action="" id="search_box">
+                            <input type="text" id="search_text" placeholder="Bạn muốn tìm gì?" required>
+                            <button id="search_button"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                        </form>
+                        
+                        <a href="#" class="user_register"><i class="fa-solid fa-pen"></i> Register / </a>
+                        <a href="#"  class="user_login"><i class="fa-solid fa-user"></i> Login</a>
+                    </div>
+
+                    <div class="cart">
+                        <p>your cart: 0 items - $0.00</p>
+                    </div>
+                </div>
+
+                <!-- POPUP REGISTER -->
+                <div class="modal_container hide">
+                    <div class="modal">
+                        <!-- HEADER -->
+                        <div class="modal_header">
+                            <button id="button_close"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <!-- END HEADER -->
+                
+                        <!-- BODY -->
+                        <div class="modal_body">
+                            <div class="username">
+                                <input placeholder="User name (login)" id="nhap_info" type="text" required>
+                                <i id="modal_icon" class="fa-solid fa-user"></i>
+                            </div>
+                    
+                            <div class="password">
+                                <input placeholder="Password" id="nhap_info" type="password" required>
+                                <i id="modal_icon" class="fa-solid fa-lock"></i>
+                            </div>
+                            
+                            <div class="Email">
+                                <input placeholder="E-mail" id="nhap_info" type="email" required>
+                                <i id="modal_icon" class="fa-solid fa-envelope"></i>
+                            </div>
+                    
+                            <div class="comfirm_pass">
+                                <input placeholder="Confirm Password" id="nhap_info" type="password" required>
+                                <i id="modal_icon" class="fa-solid fa-lock"></i>
+                            </div>
+                            
+                            <div class="button">
+                                <a  id="modal_button" href="#">
+                                    SIGN UP
+                                </a>
+                            </div>
+                            
+                            <div>
+                                <a id="forgot" href="#">Quên Mật khẩu ?</a>
+                            </div>
+                        </div>
+                        <!-- END BODY -->
+                    </div>
+                </div>
+
+                <!-- POPUP LOGIN -->
+                <div class="login_container hide">
+                    <div class="login">
+                        <!-- HEADER -->
+                        <div class="login_header">
+                            <button id="button_close"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <!-- END HEADER -->
+                
+                        <!-- BODY -->
+                        <div class="login_body">
+                            <div class="login_email">
+                                <input placeholder="Login or Email" id="nhap_info" type="text" required>
+                                <i id="login_icon" class="fa-solid fa-user"></i>
+                            </div>
+                    
+                            <div class="password_login">
+                                <input placeholder="Password" id="nhap_info" type="password" required>
+                                <i id="login_icon" class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div id="remember">
+                                <input type="checkbox">
+                                <p>Remember me</p>
+                            </div>
+
+                            <div>
+                                <a id="forgot" href="#">Quên Mật khẩu ?</a>
+                            </div>
+
+                            <div class="button">
+                                <a  id="login_button" href="#">
+                                    LOGIN
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END BODY -->
+                    </div>
+                </div>  
+            </div>
+            <div id="co_dinh_header">
+                <hr>
+                <div class="bottomheader">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="logo">
+                        <div class="logo_text">
+                            <p>Books And Media Store</p>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="shop.html">SHOP</a></li>
+                            <li><a href="contact.html">CONTACTS</a></li>
+                            <li><a href="aboutus.html">ABOUT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <p>About us</p>
+            </div>
+        </nav>
+    </div>
+
+    <div class="popup_cart hide">
+        <div class="popup_content">
+            <div class="close_popup">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="title_popup">
+                <i class="fa-solid fa-check"></i>
+                <span>Sản phẩm vừa được thêm vào giỏ hàng</span>
+            </div>
+            <div class="popup_content_product">
+                <div class="popup_head">
+                    <div class="img_popup">
+                        <img src="img/book9.png" alt="sach" class="book-image">
+                    </div>
+                    <div class="text_product_popup">
+                        <ul>
+                            <li>
+                                <p>
+                                    Đệ Tự Quy
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-xmark"></i> Xóa</a>
+                            </li>
+                            <li>
+                                <p><i class="fa-solid fa-check"></i> Sản phầm vừa thêm</p>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="cost_product">
+                        <p class="cost">290.000đ</p>
+                    </div>
+                    <div class="count_product">
+                        <button class="count decrease">-</button>
+                        <input type="text">
+                        <button class="count increase">+</button>
+                    </div>
+                    <div class="sum_product">
+                        <p class="total_cost">290.000đ</p>
+                    </div>
+                </div>
+                <div class="popup_foot">
+                    <div class="popup_foot_1">
+                        <p>GIỎ HÀNG CỦA BẠN <span class="style_cart_count">( <span class="count_foot_1">1</span> sản phẩm )</span></p>
+                        <p>Tổng tiền thanh toán: <span class="total_cost">290.000đ</span></p>
+                    </div>
+                    <div class="popup_foot_2">
+                        <input type="submit" value="Tới giỏ hàng">
+                        <input type="submit" value="Tiến hành thanh toán">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="drop_down_menu">
+        <div class="drop_menu_content">
+            <span class="chon_text">
+                Sort by: <span class="in_chon_text">Default</span>
+            </span>
+            <div class="icon_drop_down"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+
+        <div class="choose_menu">
+            <ul class="choose">
+                <li class="choosen_option active">
+                    <span class="choosen_option_text">Default</span>
+                </li>
+                <li class="choosen_option">
+                    <span class="choosen_option_text">A &rarr; Z</span>
+                </li>
+                <li class="choosen_option">
+                    <span class="choosen_option_text">Price Increase</span>             
+                </li>
+                <li class="choosen_option">
+                    <span class="choosen_option_text">Price Decrease</span>
+                </li>
+                <li class="choosen_option">
+                    <span class="choosen_option_text">Latest Books</span>
+                </li>
+                <li class="choosen_option">
+                    <span class="choosen_option_text">Oldest Books</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section_shop">
+        <div class="article_shop">
+            <div class="box">
+                <div class="box_content">
+                    <div class="box_slogan_1">
+                        <p>Cart</p>
+                    </div>
+                    <hr>
+                    <div class="content_1">   
+                        <p>No products in your cart</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box_content">
+                    <div class="box_slogan_2">
+                        <p>Author</p>
+                    </div>
+                    <hr>
+                    <div class="content_2">   
+                        <ul>
+                            <li>
+                                <input class="author" type="checkbox" name="author1" id="author1" hidden>
+                                <label for="author1">Thần Điêu Đại Bịp</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author2" id="author2" hidden>
+                                <label for="author2">Nguyễn Việt Tiến</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author3" id="author3" hidden>
+                                <label for="author3">Trần Duy Long</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author4" id="author4" hidden>
+                                <label for="author4">Sir Artnur Conan Doyle</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author5" id="author5" hidden>
+                                <label for="author5">Adam Khoo</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author6" id="author6" hidden>
+                                <label for="author6">Adam Freeman</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author7" id="author7" hidden>
+                                <label for="author7">Valerio De Sanctics</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author8" id="author8" hidden>
+                                <label for="author8">Mark J. Collins</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author9" id="author9" hidden>
+                                <label for="author9">Sơn Tùng</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author10" id="author10" hidden>
+                                <label for="author10">Nguyễn Ngọc Ký</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author11" id="author11" hidden>
+                                <label for="author11">Lý Dục Tú</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author12" id="author12" hidden>
+                                <label for="author12">Spiderum</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author13" id="author13" hidden>
+                                <label for="author13">Nguyễn Nhật Ánh</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author14" id="author14" hidden>
+                                <label for="author14">Thích Nhất Hạnh</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author15" id="author15" hidden>
+                                <label for="author15">Fujiko F Fujio</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author16" id="author16" hidden>
+                                <label for="author16">Gosho Aoyama</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author17" id="author17" hidden>
+                                <label for="author17">Takeharu Sakurai</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author18" id="author18" hidden>
+                                <label for="author18">Trang Hạ</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author19" id="author19" hidden>
+                                <label for="author19">Andrew Ross Sorkin</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author20" id="author20" hidden>
+                                <label for="author20">Andrew Roberts</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author21" id="author21" hidden>
+                                <label for="author21">Andrew X Pham</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author22" id="author22" hidden>
+                                <label for="author22">Andrew Radford</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author23" id="author23" hidden>
+                                <label for="author23">Kim Khánh</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author24" id="author24" hidden>
+                                <label for="author24">Ryan Holiday</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author25" id="author25" hidden>
+                                <label for="author25">Napoleon Hill</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author26" id="author26" hidden>
+                                <label for="author26">Brian Tracy</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author27" id="author27" hidden>
+                                <label for="author27">Nina De Gramont</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author28" id="author28" hidden>
+                                <label for="author28">Sunyi Dean</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author29" id="author29" hidden>
+                                <label for="author29">Megan Miranda</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author30" id="author30" hidden>
+                                <label for="author30">Elly Griffiths</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author31" id="author31" hidden>
+                                <label for="author31">Matthew Fitzsimmons</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author32" id="author32" hidden>
+                                <label for="author32">Jennifer Lynn Barnes</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author33" id="author33" hidden>
+                                <label for="author33">Sarah Dessen</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author34" id="author34" hidden>
+                                <label for="author34">J.K.Rowling</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author35" id="author35" hidden>
+                                <label for="author35">Colleen Hoover</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author36" id="author36" hidden>
+                                <label for="author36">Jeffrey Archer</label>
+                            </li>
+                            <li>
+                                <input class="author" type="checkbox" name="author37" id="author37" hidden>
+                                <label for="author37">Stephen King</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box_content">
+                    <div class="box_slogan_3">
+                        <p>Price range</p>
+                    </div>
+                    <hr>
+                    <div class="content_3">   
+                        <div class="price_range">
+                            <!-- tạo khoảng giao nhau của 2 nút -->
+                            <div class="progress"></div>
+                            <div class="range_input">
+                                <input type="range" class="range_min" value="50000" min="50000" max="5000000" step="10000">
+                                <input type="range" class="range_max" value="5000000" min="50000" max="5000000" step="10000">
+                            </div>
+                            <div class="range_text">
+                                <div class="text_min">50.000</div>
+                                <div class="text_max">5.000.000</div>
+                            </div>
+                            <div class="filter">
+                                <input type="submit" value="FILTER">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="cacsanpham">
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book9.png" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product icon_cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Đệ tử quy</p>
+                        <p>50.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+    
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book2.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Pro ASP.NET Core 7,...</p>
+                        <p>1.275.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book3.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Building Web APIs with...</p>
+                        <p>1.100.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book4.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Pro HTML5 with CSS, ...</p>
+                        <p>1.750.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book5.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Búp sen xanh</p>
+                        <p>50.400 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book6.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Tuyển tập câu đố vui...</p>
+                        <p>22.500 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book7.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Tuyển tập câu đó vui...</p>
+                        <p>20.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book8.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Tuyển tập câu đó vui...</p>
+                        <p>20.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book1.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Tôi Tài Giỏi Bạn Cũng Thế!</p>
+                        <p>85.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book10.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Người trong muôn...</p>
+                        <p>160.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book11.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Gạc ma vòng tròn bất tử</p>
+                        <p>198.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book12.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Đảo mộng mơ </p>
+                        <p>65.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book13.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Bông hồng cài áo</p>
+                        <p>52.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book14.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Doraemon những...</p>
+                        <p>30.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+                <div class="sach">
+                    <div class="sach_img" id="hover_for_img_product">
+                        <img src="img/book15.jpg" alt="sach">
+                        <div class="hover_img_product">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon_product eye">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon_product cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sach_text">
+                        <p>Thám tử lừng danh...</p>
+                        <p>52.000 VND</p>
+                        <p>In stock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefit_shop">
+        <div class="return">
+            <div class="icon_benefit">
+                <i class="fa-solid fa-rotate-left"></i>
+            </div>
+            <div class="text_benefit">
+                <p>7 ngày miễn phí trả hàng</p>
+                <p>Trả hàng miễn phí trong 7 ngày</p>
+            </div>
+            
+        </div>
+        <div class="authentic">
+            <div class="icon_benefit">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="text_benefit">
+                <p>Hàng chính hãng 100%</p>
+                <p>Đảm bảo hàng chính hãng hoặc</p>
+                <p>hoàn tiền gấp đôi</p>
+            </div>
+        </div>
+        <div class="freeship">
+            <div class="icon_benefit">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div class="text_benefit">
+                <p>Miễn phí vận chuyển</p>
+                <p>Giao hàng miễn phí toàn quốc</p>
+            </div>
+        </div>
+    </div>
+    <div class="backtop_container">
+        <div class="backtop">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_content">
+            <div class="logo_text_footer">
+                <img src="img/logo.png" alt="logo">
+                <div class="text">
+                    <p>Books And Media Store</p>
+                </div>
+            </div>
+
+            <div class="social_media">
+                <ul>
+                    <li>
+                        <a href="" class="fb">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="yt">
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="x">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="ins">
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="github">
+                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text_footer">
+                <p>Bản quyền thuộc về <a href="index.html">TechBook</a> | Cung cấp bởi <a href="#">Ace</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            var scrollPosition = $(this).scrollTop()
+            var threshold = 200
+            if(scrollPosition >= 200)
+            {
+                $('#co_dinh_header').css({
+                    "position": "fixed",
+                    "width": "100%"
+                }).addClass('sticky')
+            }
+            else
+            {
+                $('#co_dinh_header').css({
+                    "position": "relative",
+                    "width": "100%"
+                }).removeClass('sticky')
+            }
+        })
+    })
+</script>
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            if ($(this).scrollTop())
+            {
+                $('.backtop_container').fadeIn();
+            }
+            else
+            {
+                $('.backtop_container').fadeOut();
+            }
+        });
+
+        $('.backtop_container').click(function()
+            {
+                $('html, body').animate(
+                    {
+                        scrollTop: 0
+                    }, 500);
+            });
+    });
+</script>
+</html>

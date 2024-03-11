@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Book Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <!-- <div class="topheader">
+                <div class="contact">
+                    <p>Contact us on <a href="#">0 800 123-4567</a> Or <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                </div>
+        
+                <div class="register_cart">
+                    <div class="register">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-solid fa-pen"></i> Register / </a>
+                        <a href="#"><i class="fa-solid fa-user"></i> Login</a>
+                    </div>
+    
+                    <div class="cart">
+                        <p>your cart: 0 items - $0.00</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="topheader">
+                <div class="contact">
+                    <p>Contact us on <a href="#">0 800 123-4567</a> Or <a href="mailto:info@techbook.com">info@yoursite.com</a></p>
+                </div>
+        
+                <div class="register_cart">
+                    <div class="register">
+
+                        <form action="" id="search_box">
+                            <input type="text" id="search_text" placeholder="Bạn muốn tìm gì?" required>
+                            <button id="search_button"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                        </form>
+                        
+                        <a href="#" class="user_register"><i class="fa-solid fa-pen"></i> Register / </a>
+                        <a href="#"  class="user_login"><i class="fa-solid fa-user"></i> Login</a>
+                    </div>
+
+                    <div class="cart">
+                        <p>your cart: 0 items - $0.00</p>
+                    </div>
+                </div>
+
+                <!-- POPUP REGISTER -->
+                <div class="modal_container hide">
+                    <div class="modal">
+                        <!-- HEADER -->
+                        <div class="modal_header">
+                            <button id="button_close"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <!-- END HEADER -->
+                
+                        <!-- BODY -->
+                        <div class="modal_body">
+                            <div class="username">
+                                <input placeholder="User name (login)" id="nhap_info" type="text" required>
+                                <i id="modal_icon" class="fa-solid fa-user"></i>
+                            </div>
+                    
+                            <div class="password">
+                                <input placeholder="Password" id="nhap_info" type="password" required>
+                                <i id="modal_icon" class="fa-solid fa-lock"></i>
+                            </div>
+                            
+                            <div class="Email">
+                                <input placeholder="E-mail" id="nhap_info" type="email" required>
+                                <i id="modal_icon" class="fa-solid fa-envelope"></i>
+                            </div>
+                    
+                            <div class="comfirm_pass">
+                                <input placeholder="Confirm Password" id="nhap_info" type="password" required>
+                                <i id="modal_icon" class="fa-solid fa-lock"></i>
+                            </div>
+                            
+                            <div class="button">
+                                <a  id="modal_button" href="#">
+                                    SIGN UP
+                                </a>
+                            </div>
+                            
+                            <div>
+                                <a id="forgot" href="#">Quên Mật khẩu ?</a>
+                            </div>
+                        </div>
+                        <!-- END BODY -->
+                    </div>
+                </div>
+
+                <!-- POPUP LOGIN -->
+                <div class="login_container hide">
+                    <div class="login">
+                        <!-- HEADER -->
+                        <div class="login_header">
+                            <button id="button_close"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <!-- END HEADER -->
+                
+                        <!-- BODY -->
+                        <div class="login_body">
+                            <div class="login_email">
+                                <input placeholder="Login or Email" id="nhap_info" type="text" required>
+                                <i id="login_icon" class="fa-solid fa-user"></i>
+                            </div>
+                    
+                            <div class="password_login">
+                                <input placeholder="Password" id="nhap_info" type="password" required>
+                                <i id="login_icon" class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div id="remember">
+                                <input type="checkbox">
+                                <p>Remember me</p>
+                            </div>
+
+                            <div>
+                                <a id="forgot" href="#">Quên Mật khẩu ?</a>
+                            </div>
+
+                            <div class="button">
+                                <a  id="login_button" href="#">
+                                    LOGIN
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END BODY -->
+                    </div>
+                </div>  
+            </div>
+            <div id="co_dinh_header">
+                <hr>
+                <div class="bottomheader">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="logo">
+                        <div class="logo_text">
+                            <p>Books And Media Store</p>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="shop.html">SHOP</a></li>
+                            <li><a href="contact.html">CONTACTS</a></li>
+                            <li><a href="aboutus.html">ABOUT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <p>Contacts</p>
+            </div>
+        </nav>
+    </div>
+
+    <div class="section_contact">
+        <div class="article_1">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.7725940421665!2d106.67290467369885!3d10.980529955398548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1085e2b1c37%3A0x73bfa5616464d0ee!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUaOG7pyBE4bqndSBN4buZdA!5e0!3m2!1svi!2s!4v1709606116737!5m2!1svi!2s" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="article_2">
+            <p>Get In Touch</p>
+            <div class="contact">
+                <div class="phone">
+                    <div><i class="fa-solid fa-phone"></i></div>
+                    <h5>Phone</h5>
+                    <h6>123-456-7890</h6>
+                </div>
+
+                <div class="email">
+                    <div><i class="fa-solid fa-envelope"></i></div>
+                    <h5>Email</h5>
+                    <h6>techbook@gmail.com</h6>
+                </div>
+
+                <div class="address">
+                    <div><i class="fa-solid fa-location-dot"></i></div>
+                    <h5>Address</h5>
+                    <h6>06, trần văn ơn, phú hòa, thủ dầu một, bình dương</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="article_3">
+            <p>Send Us A Message</p>
+            <div class="form_content">
+                <form action="#">
+                    <div class="form">
+                        <div class="form_group_1">
+                            <input type="text" required>
+                            <label class="label_1" for="">Name*</label>
+                        </div>
+
+                        <div class="form_group_1">
+                            <input type="text" required>
+                            <label class="label_2" for="">Email</label>
+                        </div>
+                    </div>
+                        
+                    <div class="form_group">
+                        <textarea required></textarea>
+                        <label class="label_3" for="">Message</label>
+                    </div>
+                </form>
+                <input type="submit" value="SEND MESSAGE">
+            </div>
+        </div>
+    </div>
+
+    <div class="backtop_container">
+        <div class="backtop">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_content">
+            <div class="logo_text_footer">
+                <img src="img/logo.png" alt="logo">
+                <div class="text">
+                    <p>Books And Media Store</p>
+                </div>
+            </div>
+
+            <div class="social_media">
+                <ul>
+                    <li>
+                        <a href="" class="fb">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="yt">
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="x">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="ins">
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="github">
+                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text_footer">
+                <p>Bản quyền thuộc về <a href="index.html">TechBook</a> | Cung cấp bởi <a href="#">Ace</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            var scrollPosition = $(this).scrollTop()
+            var threshold = 200
+            if(scrollPosition >= 200)
+            {
+                $('#co_dinh_header').css({
+                    "position": "fixed",
+                    "width": "100%"
+                }).addClass('sticky')
+            }
+            else
+            {
+                $('#co_dinh_header').css({
+                    "position": "relative",
+                    "width": "100%"
+                }).removeClass('sticky')
+            }
+        })
+    })
+</script>
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            if ($(this).scrollTop())
+            {
+                $('.backtop_container').fadeIn();
+            }
+            else
+            {
+                $('.backtop_container').fadeOut();
+            }
+        });
+
+        $('.backtop_container').click(function()
+            {
+                $('html, body').animate(
+                    {
+                        scrollTop: 0
+                    }, 500);
+            });
+    });
+</script>
+</html>

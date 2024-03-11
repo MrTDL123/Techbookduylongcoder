@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Book Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header_section">
+        <header>
+            <div class="topheader">
+                <div class="contact">
+                    <p>Contact us on <a href="#">0 800 123-4567</a> Or <a href="mailto:info@techbook.com">info@techbook.com</a></p>
+                </div>
+        
+                <div class="register_cart">
+                    <div class="register">
+
+                        <form action="" id="search_box">
+                            <input type="text" id="search_text" placeholder="Bạn muốn tìm gì?" required>
+                            <button id="search_button"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                        </form>
+                        
+                        <a href="#" class="user_register"><i class="fa-solid fa-pen"></i> Register / </a>
+                        <a href="#"  class="user_login"><i class="fa-solid fa-user"></i> Login</a>
+                    </div>
+
+                    <div class="cart">
+                        <p>your cart: 0 items - $0.00</p>
+                    </div>
+                </div>
+
+                <!-- POPUP REGISTER -->
+                <div class="modal_container hide">
+                    <div class="modal">
+                        <!-- HEADER -->
+                        <div class="modal_header">
+                            <button id="button_close"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <!-- END HEADER -->
+                
+                        <!-- BODY -->
+                        <div class="modal_body">
+                            <div class="username">
+                                <input placeholder="User name (login)" id="nhap_info" type="text" required>
+                                <i id="modal_icon" class="fa-solid fa-user"></i>
+                            </div>
+                    
+                            <div class="password">
+                                <input placeholder="Password" id="nhap_info" type="password" required>
+                                <i id="modal_icon" class="fa-solid fa-lock"></i>
+                            </div>
+                            
+                            <div class="Email">
+                                <input placeholder="E-mail" id="nhap_info" type="email" required>
+                                <i id="modal_icon" class="fa-solid fa-envelope"></i>
+                            </div>
+                    
+                            <div class="comfirm_pass">
+                                <input placeholder="Confirm Password" id="nhap_info" type="password" required>
+                                <i id="modal_icon" class="fa-solid fa-lock"></i>
+                            </div>
+                            
+                            <div class="button">
+                                <a  id="modal_button" href="#">
+                                    SIGN UP
+                                </a>
+                            </div>
+                            
+                            <div>
+                                <a id="forgot" href="#">Quên Mật khẩu ?</a>
+                            </div>
+                        </div>
+                        <!-- END BODY -->
+                    </div>
+                </div>
+
+                <!-- POPUP LOGIN -->
+                <div class="login_container hide">
+                    <div class="login">
+                        <!-- HEADER -->
+                        <div class="login_header">
+                            <button id="button_close"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <!-- END HEADER -->
+                
+                        <!-- BODY -->
+                        <div class="login_body">
+                            <div class="login_email">
+                                <input placeholder="Login or Email" id="nhap_info" type="text" required>
+                                <i id="login_icon" class="fa-solid fa-user"></i>
+                            </div>
+                    
+                            <div class="password_login">
+                                <input placeholder="Password" id="nhap_info" type="password" required>
+                                <i id="login_icon" class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div id="remember">
+                                <input type="checkbox">
+                                <p>Remember me</p>
+                            </div>
+
+                            <div>
+                                <a id="forgot" href="#">Quên Mật khẩu ?</a>
+                            </div>
+
+                            <div class="button">
+                                <a  id="login_button" href="#">
+                                    LOGIN
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END BODY -->
+                    </div>
+                </div>  
+            </div>
+            
+            <hr>
+            <div class="bottomheader">
+                <div class="logo">
+                    <img src="img/logo.png" alt="logo">
+                    <div class="logo_text">
+                        <p>Books And Media Store</p>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="shop.html">SHOP</a></li>
+                        <li><a href="contact.html">CONTACTS</a></li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="slideshow">
+                <div class="slide_area">
+                        <div class="bigslide slideshow1">
+                            <!-- Animation 1 -->
+                            <img class="background" src="img/slider-1-3_bg.png" alt="slideshow1">
+                            <img class="book" src="img/slider-1-3_books.jpg" alt="slideshow1">
+                            
+
+                            <div class="letter">
+                                <div class="slogan">
+                                    <!-- Animation 2 -->
+                                    <div id="line1">
+                                        <p>Today's Deals</p>
+                                    </div>
+
+                                    <!-- Aniamtion 4 -->
+                                    <div id="line2">
+                                        <p>In Books</p>
+                                    </div>
+                                </div>
+                                <p>You can explore our store if you're looking to gift a nice</p>
+                                <p> book, where you can find books from the best-selling series</p>
+
+                                <div class="button">
+                                    <a href="#">
+                                        START SHOPPING NOW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bigslide slideshow2">
+                            <div class="block">
+                                <img class="item" src="img/slider-1-2_icon-1.png" alt="graph">
+                                <img class="item" src="img/slider-1-2_icon-2.png" alt="volume">
+                                <img class="item" src="img/slider-1-2_icon-3.png" alt="smartphone">
+                                <img class="item" src="img/slider-1-2_icon-4.png" alt="mail">
+                                <img class="item" src="img/slider-1-2_icon-5.png" alt="message">
+
+                                <img class="item" src="img/slider-1-2_icon-7.png" alt="note">
+                                <img class="item" src="img/slider-1-2_icon-8.png" alt="cup">
+                                <img class="item" src="img/slider-1-2_icon-9.png" alt="cart">
+                                <img class="item" src="img/slider-1-2_icon-10.png" alt="lock">
+                                <img class="item" src="img/slider-1-2_icon-11.png" alt="calendar">
+                            </div>
+                            
+                            <div class="cloud_line2">
+                                <img src="img/12.png">
+                                <img src="img/slider-1-2_cloud-3.png">
+                                <img src="img/11.png">
+                                <img src="img/slider-1-2_icon-6.png" alt="computer">
+                                <p class="line2_1">Learn New</p>
+                                <p class="line2_2">Skills To Change</p>
+                                <p class="line2_3">Your Life</p>
+                            </div>
+                            
+                            <div class="line1">
+                                <p>Learning Has Never Been Easier</p>
+                            </div>
+
+                            <div class="line3">
+                                <p>
+                                    Start learning the <br>
+                                    skills you have always <br>
+                                    been dreaming of. <br>
+                                </p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="bigslide slideshow3">
+                            <img id="book_icon" src="img/slider-1_logo.png" alt="book_icon">
+                            <img id="big_cloud" src="img/5.png" alt="main_cloud">
+                            <div id="letter">
+                                <p class="slide3_book" id="B">B</p>
+                                <p class="slide3_book" id="O_1">O</p>
+                                <p class="slide3_book" id="O_2">O</p>
+                                <p class="slide3_book" id="K">K</p>
+                                <p class="slide3_book" id="S">S</p>
+                            </div>
+
+                            <img id="small_cloud1" src="img/21.png" alt="small_cloud1">
+                            <img id="small_cloud2" src="img/17.png" alt="small_cloud2">
+                            <img id="small_cloud3" src="img/3.png" alt="small_cloud2">
+
+                            <div id="slogan_slide3">
+                                <p id="line3_1">THE BEST BOOKS OF SUMMER 2024</p>
+                                <p id="line3_2">THE BEST BOOKS FOR READING THIS SUMMER</p>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="#">
+                                    START SHOPPING NOW
+                                </a>
+                            </div>
+        
+                        </div>
+                </div>
+            </div>
+
+            <div class="button_slide_container">
+                <div class="button_slideleft">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </div>
+                <div class="button_slideright">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="bestseller_container">
+
+        <div class="bestseller_title">
+            <p>Books Bestsellers</p>
+        </div>
+        
+        <div class="bestseller_category">
+            <p>ALL</p>
+            <p>ARTS & PHOTOGRAPHY</p>
+            <p>BIOGRAPHIES</p>
+            <p>CHILDREN'S BOOKS</p>
+            <p>COOKBOOKS</p>
+
+            <div class="bestseller_drop_down_menu">
+                <div class="bestseller_drop_menu_content">
+                    <span class="bestseller_chon_text">
+                        Sắp xếp theo: <span class="bestseller_in_chon_text">Default</span>
+                    </span>
+                    <div class="bestseller_icon_drop_down"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+        
+                <div class="bestseller_choose_menu">
+                    <ul class="bestseller_choose">
+                        <li class="bestseller_choosen_option">
+                            <span class="bestseller_choosen_option_text">Default</span>
+                        </li>
+                        <li class="bestseller_choosen_option">
+                            <span class="bestseller_choosen_option_text">Title</span>
+                        </li>
+                        <li class="bestseller_choosen_option">
+                            <span class="bestseller_choosen_option_text">A &rarr; Z</span>
+                        </li>
+                        <li class="bestseller_choosen_option">
+                            <span class="bestseller_choosen_option_text">Date</span>             
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bestseller_book_container">
+            </div>
+        </div>
+
+        <div class="bestseller_book">
+            <div class="best_book sach">
+                <div class="sach_img" id="hover_for_img_product">
+                    <img src="img/book2.jpg" alt="sach">
+                    <div class="hover_img_product">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon_product eye">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon_product cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sach_text">
+                    <p>Pro ASP.NET Core 7,...</p>
+                    <p>Adam Freeman</p>
+                </div>
+            </div>
+
+            <div class="best_book sach">
+                <div class="sach_img" id="hover_for_img_product">
+                    <img src="img/book3.jpg" alt="sach">
+                    <div class="hover_img_product">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon_product eye">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon_product cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sach_text">
+                    <p>Building Web APIs with...</p>
+                    <p>Valerio De Sanctics</p>
+                </div>
+            </div>
+
+            <div class="best_book sach">
+                <div class="sach_img" id="hover_for_img_product">
+                    <img src="img/book4.jpg" alt="sach">
+                    <div class="hover_img_product">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon_product eye">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon_product cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sach_text">
+                    <p>Pro HTML5 with CSS, ...</p>
+                    <p>Mark J. Collins</p>
+                </div>
+            </div>
+
+            <div class="best_book sach">
+                <div class="sach_img" id="hover_for_img_product">
+                    <img src="img/book5.jpg" alt="sach">
+                    <div class="hover_img_product">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon_product eye">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon_product cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sach_text">
+                    <p>Búp sen xanh</p>
+                    <p>Sơn Tùng</p>
+                </div>
+            </div>
+
+            <div class="best_book sach">
+                <div class="sach_img" id="hover_for_img_product">
+                    <img src="img/book10.jpg" alt="sach">
+                    <div class="hover_img_product">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon_product eye">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon_product cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sach_text">
+                    <p>Người trong muôn...</p>
+                    <p>Spiderum</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="popular_author">
+        <h4 id="popular_authortext">Popular Authors & Series</h4>
+        <p>We are online store selling books, our store stocks over 500 thousand great books and digital items. We are</p>
+        <p>a perfect place for those looking for the best books, audio books, textbooks and videos.</p>
+        <input type="submit" value="SEE MORE AUTHORS">
+    </div>
+
+    <div class="khoangtrong"></div>
+
+    <div class="ourservice">
+        <div class="title">
+            <p>Our Services</p>
+        </div>
+
+        <div class="describe">
+            <p>We share thousands of books with others by reviewing them. Our goal is to get the books in the readers' hands all over the</p>
+            <p>world. Enjoy the possible book buying experience with our reliable book store.</p>
+        </div>
+
+        <div class="service">
+            <div class="service1">
+                <i id="service_icon" class="fa-solid fa-gift"></i>
+                <p id="service_name">FREE GIFT WRAP</p>
+            </div>
+            <div class="service1">
+                <i id="service_icon" class="fas fa-shipping-fast"></i>
+                <p id="service_name">SHIPPING</p>
+            </div>
+            <div class="service1">
+                <i id="service_icon" class="fa-solid fa-cart-shopping"></i>
+                <p id="service_name">ONLINE ORDERING</p>
+            </div>
+            <div class="service1">
+                <i id="service_icon" class="fa-solid fa-book"></i>
+                <p id="service_name">USED BOOK BUYING</p>
+            </div>
+            <div class="service1">
+                <i id="service_icon" class="fa fa-refresh" aria-hidden="true"></i>
+                <p id="service_name">RETURN & EXCHANGES</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="khoangtrong"></div>
+
+    <div class="napvip">
+        <p>Gift & Prepaid Cards</p>
+        <div class="vip_level">
+            
+            <div class="basic">
+                <div class="vip_title">
+                    <p>BASIC</p>
+                </div>
+                <svg id="icon_basic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.744 16.683l.349-.199v1.717l-.349.195v-1.713zm-9.656-3.671l-.575-.33-.002.728.575.33c.5.286.493-.446.002-.728zm10.246 5.051l.343-.195v-1.717l-.343.195v1.717zm6.666-11.122v11.507l-9.75 5.552-12.25-6.978v-11.507l9.767-5.515 12.233 6.941zm-13.846-3.733l9.022 5.178 1.7-.917-9.113-5.17-1.609.909zm-4.469 8.558l-1.685-.962v2.585l.525.301v-1.068l1.002.573.001-.442-.999-.573.001-.597 1.153.661.002-.478zm2.353 3.937c-.195-.401.066-1.026-.445-1.473v-.007c.607.085.488-1.083-.317-1.545l-1.294-.738v2.584l.524.301.003-1.01.524.301c.553.316.335.792.479 1.286l.526.301zm2.17.765l-1.287-.737.002-.634 1.156.663.001-.442-1.156-.663v-.554l1.262.723.001-.478-1.791-1.023v2.584l1.812 1.039v-.478zm2.166 1.242l-1.287-.738.002-.633 1.156.663.001-.441-1.156-.663.001-.554 1.261.722.001-.478-1.792-1.023v2.585l1.812 1.038.001-.478zm3.647-7.631l-8.819-5.217-2.044 1.167 8.859 5.138 2.004-1.088zm5.979-.943l-2 1.078v2.786l-3 1.688v-2.856l-2 1.078v8.362l7-3.985v-8.151zm-3.846 8.46l.344-.196v-1.717l-.344.196v1.717zm2.346-3.053l-.342.195v1.717l.342-.195v-1.717zm-1.193 2.397l.35-.199v-1.717l-.35.199v1.717zm-.578.329l.343-.195v-1.717l-.343.195v1.717z"/></svg>
+                
+                <div class="description_vip">
+                    <p>FREE Two-Day Shipping <br>
+                    on millions of items</p>
+                </div>
+
+                <input type="submit" value="SIGN UP">
+
+            </div>
+
+            <div class="plus">
+                <div class="vip_title">
+                    <p>PLUS</p>
+                </div>
+                <p id="gia_vip">99.000&#8363/month</p>
+                <div class="description_vip">
+                    <p>Perfect for independent instructors,<br>
+                    authors, and tutors</p>
+                </div>
+
+                <input type="submit" value="BUY THIS CARD">
+            </div>
+
+            <div class="special">
+                <div class="vip_title">
+                    <p>SPECIAL</p>
+                </div>
+                <p id="gia_vip">2.000.000&#8363/month</p>
+                <div class="description_vip">
+                    <p>Our gift cards are the perfect<br>
+                        present for any occasion</p>
+                </div>
+                
+                <input type="submit" value="BUY THIS CARD">
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="feedback_container">
+        <div class="feedback_wrapper">
+                <div class="feedback_slide feedback1">
+                    <div class="feedback_signal">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+
+                    <div class="feedback">
+                        <p>Web rất chỉnh chu, phong phú hiệu ứng nhưng không hề loạn. 
+                        Làm tôi chỉ muốn thuê mấy anh làm web này về cho tôi. Tôi hy vọng 
+                        các anh dev thêm các sự kiện giảm giá để tăng trải nghiệm người dùng</p>
+                    </div>
+
+                    <div class="feedback_name">
+                        <p>Lê Hoàng Phúc Anh</p>
+                    </div>
+                </div>
+
+                <div class="feedback_slide feedback2">
+                    <div class="feedback_signal">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+
+                    <div class="feedback">
+                        <p>Tôi đánh giá cao sự đa dạng của sản phẩm và cách bạn tổ chức chúng thành các danh mục 
+                        rõ ràng. Quá trình thanh toán và giao hàng cũng diễn ra một cách suôn sẻ.
+                        Tôi rất hài lòng với trải nghiệm của mình</p>
+                    </div>
+
+                    <div class="feedback_name">
+                        <p>Lê Quốc Bảo</p>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <div class="backtop_container">
+        <div class="backtop">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_content">
+            <div class="logo_text_footer">
+                <img src="img/logo.png" alt="logo">
+                <div class="text">
+                    <p>Books And Media Store</p>
+                </div>
+            </div>
+
+            <div class="social_media">
+                <ul>
+                    <li>
+                        <a href="" class="fb">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="yt">
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="x">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="ins">
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="github">
+                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text_footer">
+                <p>Bản quyền thuộc về <a href="index.html">TechBook</a> | Cung cấp bởi <a href="#">Ace</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="js\script.js"></script>
+<script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if ($(this).scrollTop())
+                {
+                    $('.backtop_container').fadeIn();
+                }
+                else
+                {
+                    $('.backtop_container').fadeOut();
+                }
+            });
+
+            $('.backtop_container').click(function()
+                {
+                    $('html, body').animate(
+                        {
+                            scrollTop: 0
+                        }, 500);
+                });
+        });
+</script>
+</html>
